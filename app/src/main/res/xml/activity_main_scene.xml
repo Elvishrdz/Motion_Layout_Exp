@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <!-- Transition: Contains the basic movement definition
+         constraintSetStart/End: Are references to each side of the movement.
+         duration: specify the amount of time required to complete the movement
+         OnSwipe: allows to control the movement through touch
+         touchAnchorId: Reference to the touchable view
+         touchAnchorSide: Indicates the side where you can drag the view
+         dragDirection: Indicated the drag progress direction. (the progress increment each time is dragged in the given direction) -->
+    <Transition
+        motion:constraintSetStart="@+id/start"
+        motion:constraintSetEnd="@+id/end"
+        motion:duration="1000">
+        <OnSwipe
+            motion:touchAnchorId="@+id/button"
+            motion:touchAnchorSide="right"
+            motion:dragDirection="dragRight" />
+    </Transition>
+
+    <!-- ConstraintSet: Defines the different restrictions that describe your custom movement.
+        This constraintSet defines the start position of all the views in our MotionLayout -->
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/button"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="8dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+
+            <CustomAttribute
+                motion:attributeName = "backgroundColor"
+                motion:customColorValue = "#0A9800"/>
+
+        </Constraint>
+    </ConstraintSet>
+
+    <!-- ConstraintSet: Defines the different restrictions that describe your custom movement.
+        This constraintSet defines the end position of all the views in our MotionLayout -->
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/button"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginEnd="8dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+
+            <CustomAttribute
+                motion:attributeName = "backgroundColor"
+                motion:customColorValue = "#000DFF"/>
+
+        </Constraint>
+    </ConstraintSet>
+
+
+   <!-- Interpolated Attributes
+        Each ConstraintSet can contain additional attributes which interpolate during the transition:
+
+        * alpha
+        * visibility
+        * elevation
+        * rotation
+            - rotationX
+            - rotationY
+        * translation
+            - translationX
+            - translationY
+            - translationZ
+        * Scale
+            - scaleX
+            - scaleY -->
+
+    <!--Custom Attributes
+    Inside ConstraintSet you can use the CustomAttribute attribute to specify a transition for the
+    attributes that are not related with the position or the View attributes:
+
+    <CustomAttribute
+        motion:attributeName="backgroundColor"
+        motion:customColorValue="#D81B60"/>
+
+    attributeName     -> Is MANDATORY. Must match which an object which contains get and set methods.
+                         e.g: backgroundColor is compatible because the view contains getBackgroundColor()
+                         and setBackgroundColor()
+    {Value Attribute} -> the available types are:
+                         motion:customColorValue    -> for colors
+                         motion:customIntegerValue  -> for integer numbers
+                         motion:customFloatValue    -> for float values
+                         motion:customStringValue   -> for strings
+                         motion:customDimension     -> for dimensions
+                         motion:customBoolean       -> for boolean values
+
+    -->
+
+
+
+</MotionScene>

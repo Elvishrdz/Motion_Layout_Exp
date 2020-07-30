@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- KeyPosition attributes
+        framePosition   -> is a number between 0 and 100 to say when in the animation this KeyPosition
+                           should be applied, with 1 being 1% through the animation, and 99 being 99%
+                           through the animation. So if the value is 50, you apply it right in the middle.
+        motionTarget    -> is the view for which this KeyPosition modifies the path.
+        keyPositionType -> is how this KeyPosition modifies the path. It can be either parentRelative,
+                           pathRelative, or deltaRelative.
+        percentY        -> is how much to modify the path at framePosition (values between 0.0
+                           and 1.0, with negative values and values >1 allowed).
+        curveFit        -> defines if uses a curve in the path. If not specified, by default, the value
+                           is a curve (spline). -->
+    <Transition
+        app:constraintSetStart="@+id/start"
+        app:constraintSetEnd="@+id/end"
+        app:duration="1000">
+
+        <KeyFrameSet>
+            <KeyPosition
+                app:motionTarget="@id/ivPathStar"
+                app:framePosition="50"
+                app:keyPositionType="pathRelative"
+                app:percentY="-0.514"
+                app:curveFit="spline"
+                app:percentX="0.503"
+                />
+            <KeyPosition
+                app:motionTarget="@id/ivPathStar"
+                app:framePosition="15"
+                app:keyPositionType="pathRelative"
+                app:percentY="-0.35"/>
+            <KeyPosition
+                app:motionTarget="@id/ivPathStar"
+                app:framePosition="85"
+                app:keyPositionType="pathRelative"
+                app:percentY="-0.35"/>
+            <KeyPosition
+                app:motionTarget="@id/tvPathMessage"
+                app:framePosition="50"
+                android:alpha="0.0" />
+
+            <!-- KeyAttributes modify attributes during motion -->
+            <KeyAttribute
+                app:framePosition="50"
+                app:motionTarget="@id/ivPathStar"
+                android:scaleY="2.0"
+                android:scaleX="2.0"
+                android:rotation="-360" />
+
+            <KeyAttribute
+                app:framePosition="50"
+                app:motionTarget="@id/tvPathMessage"
+                android:alpha="0.0"/>
+
+            <!-- Using a custom attribute. In this example setColorFilter on Drawable will be called. -->
+            <KeyAttribute
+                app:framePosition="25"
+                app:motionTarget="@id/ivPathStar">
+                <CustomAttribute
+                    app:attributeName="colorFilter"
+                    app:customColorValue="#D100C7"/>
+            </KeyAttribute>
+
+            <KeyAttribute
+                app:framePosition="75"
+                app:motionTarget="@id/ivPathStar">
+                <CustomAttribute
+                    app:attributeName="colorFilter"
+                    app:customColorValue="#1AFF00"/>
+            </KeyAttribute>
+
+        </KeyFrameSet>
+
+        <OnClick
+            app:targetId="@+id/ivPathStar"
+            app:clickAction="toggle"/>
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/ivPathStar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tvPathMessage"/>
+        <Constraint
+            android:id="@+id/tvPathMessage"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:alpha="0.0"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            <CustomAttribute
+                app:attributeName="textSize"
+                app:customDimension="12sp"/>
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/ivPathStar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tvPathMessage"/>
+        <Constraint
+            android:id="@+id/tvPathMessage"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:alpha="1.0"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            <CustomAttribute
+                app:attributeName="textSize"
+                app:customDimension="18sp"/>
+        </Constraint>
+    </ConstraintSet>
+</MotionScene>

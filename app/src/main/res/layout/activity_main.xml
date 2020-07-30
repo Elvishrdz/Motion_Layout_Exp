@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/motionLayout"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+app:layoutDescription="@xml/activity_main_scene"
+tools:context=".MainActivity"
+
+tools:showPaths="true"
+app:showPaths="true">
+
+<!-- Additional MotionLayout Attributes
+    app:applyMotionScene="boolean"  -> indicates whether to apply the MotionScene. The default value for this attribute is true.
+    app:showPaths="boolean"         -> indicates whether to show the motion paths as the motion is running. The default value for this attribute is false.
+    app:progress="float"            -> lets you explicitly specify transition progress. You can use any floating-point value from 0 (the start of the transition) to 1 (the end of the transition).
+    app:currentState="reference"    -> lets you specify a specific ConstraintSet.
+    app:motionDebug                 -> lets you display additional debug information about the motion. Possible values are "SHOW_PROGRESS", "SHOW_PATH", or "SHOW_ALL".-->
+
+<Button
+    android:id="@+id/button"
+    android:layout_width="64dp"
+    android:layout_height="64dp"
+    android:background="@color/colorAccent"
+    android:text="MENU"
+    android:textColor="#ffffff"/>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

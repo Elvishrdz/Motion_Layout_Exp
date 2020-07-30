@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        app:constraintSetStart="@id/start"
+        app:constraintSetEnd="@id/end"
+        app:duration="1000">
+
+        <KeyFrameSet>
+            <KeyPosition
+                app:motionTarget="@id/ivComplexImage"
+                app:framePosition="50"
+                app:keyPositionType="pathRelative"
+                app:percentY="-0.514"
+                app:curveFit="spline"
+                app:percentX="0.503"
+                />
+            <KeyPosition
+                app:motionTarget="@id/ivComplexImage"
+                app:framePosition="15"
+                app:keyPositionType="pathRelative"
+                app:percentY="-0.35"/>
+            <KeyPosition
+                app:motionTarget="@id/ivComplexImage"
+                app:framePosition="85"
+                app:keyPositionType="pathRelative"
+                app:percentY="-0.35"/>
+        </KeyFrameSet>
+
+        <!-- Uncomment this to the bug with an arc path -->
+        <!--<OnSwipe
+            app:touchAnchorId="@id/ivComplexImage"
+            app:touchAnchorSide="bottom"/>
+-->
+        <!-- This is the right way to fix the bug with an arc path -->
+        <OnSwipe
+            app:touchAnchorId="@id/ivComplexImage"
+            app:touchAnchorSide="bottom"
+            app:dragDirection="dragRight"/>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/ivComplexImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/ivComplexImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </ConstraintSet>
+</MotionScene>

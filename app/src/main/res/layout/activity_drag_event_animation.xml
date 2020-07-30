@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/drag_event_animation_scene"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".DragEventAnimation">
+
+    <!-- The three star icons are not constrained in the
+    layout because they will be animated in the motion scene. -->
+
+
+    <ImageView
+        android:id="@+id/ivDragStar1"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:tint="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ivDragStar3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/star_big_on" />
+
+    <ImageView
+        android:id="@+id/ivDragStar2"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:tint="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivDragStar3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/star_big_on" />
+
+    <ImageView
+        android:id="@+id/ivDragStar3"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:tint="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivDragStar1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ivDragStar2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/star_big_on" />
+</androidx.constraintlayout.motion.widget.MotionLayout>

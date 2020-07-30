@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+   <!-- OnSwipe attributes:
+        touchAnchorId   -> Is the tracked view that moves in response to touch. MotionLayout will
+                           keep this view the same distance from the finger that's swiping.
+        touchAnchorSide -> Determines which side of the view should be tracked. This is important
+                           for views that resize, follow complex paths, or have one side that moves
+                           faster than the other.
+        dragDirection   -> Determines which direction matters for this animation (up, down, left or
+                           right). -->
+    <Transition app:constraintSetStart="@+id/start"
+        app:constraintSetEnd="@+id/end"
+        app:duration="1000">
+
+        <OnSwipe app:touchAnchorId="@id/ivDragStar2" />
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/ivDragStar1"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:alpha="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Constraint
+            android:id="@+id/ivDragStar2"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Constraint
+            android:id="@+id/ivDragStar3"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:alpha="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/ivDragStar1"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:alpha="1.0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ivDragStar2"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <Constraint
+            android:id="@+id/ivDragStar2"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:layout_constraintStart_toEndOf="@id/ivDragStar1"
+            app:layout_constraintEnd_toStartOf="@id/ivDragStar3"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <Constraint
+            android:id="@+id/ivDragStar3"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:alpha="1.0"
+            app:layout_constraintStart_toEndOf="@id/ivDragStar2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+    </ConstraintSet>
+</MotionScene>
