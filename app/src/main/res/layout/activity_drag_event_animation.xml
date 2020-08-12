@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     app:layoutDescription="@xml/drag_event_animation_scene"
     android:background="@color/colorPrimaryDark"
-    tools:context=".DragEventAnimation">
+    tools:context=".ui.DragEventAnimation">
 
     <!-- The three star icons are not constrained in the
     layout because they will be animated in the motion scene. -->

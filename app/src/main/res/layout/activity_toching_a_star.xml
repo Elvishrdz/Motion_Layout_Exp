@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     app:layoutDescription = "@xml/touching_a_star_scene"
     android:background="@color/colorPrimaryDark"
-    tools:context=".TouchingAStar">
+    tools:context=".ui.TouchingAStar">
 
     <ImageView
         android:id="@+id/ivStarImage"

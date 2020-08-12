@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
     app:layoutDescription="@xml/drag_event_complex_paths_scene"
-    tools:context=".DragEventAndComplexPaths">
+    tools:context=".ui.DragEventAndComplexPaths">
 
     <ImageView
         android:id="@+id/ivComplexImage"

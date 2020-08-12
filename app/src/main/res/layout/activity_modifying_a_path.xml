@@ -9,7 +9,7 @@
     android:background="@color/colorPrimaryDark"
     app:layoutDescription="@xml/modifiying_a_path_scene"
     app:motionDebug="SHOW_ALL"
-    tools:context=".ModifyingAPath">
+    tools:context=".ui.ModifyingAPath">
 
     <TextView
         android:id="@+id/tvPathMessage"

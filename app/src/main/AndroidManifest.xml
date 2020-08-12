@@ -9,13 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Basics"></activity>
-        <activity android:name=".MotionWithCode" />
-        <activity android:name=".DragEventAndComplexPaths" />
-        <activity android:name=".ModifyingAPath" />
-        <activity android:name=".DragEventAnimation" />
-        <activity android:name=".TouchingAStar" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.Basics"></activity>
+        <activity android:name=".ui.MotionWithCode" />
+        <activity android:name=".ui.DragEventAndComplexPaths" />
+        <activity android:name=".ui.ModifyingAPath" />
+        <activity android:name=".ui.DragEventAnimation" />
+        <activity android:name=".ui.TouchingAStar" />
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

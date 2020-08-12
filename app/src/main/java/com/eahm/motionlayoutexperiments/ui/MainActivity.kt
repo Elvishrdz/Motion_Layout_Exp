@@ -1,9 +1,9 @@
-package com.eahm.motionlayoutexperiments
+package com.eahm.motionlayoutexperiments.ui
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.eahm.motionlayoutexperiments.R
 import com.eahm.motionlayoutexperiments.adapters.MainAdapter
 import com.eahm.motionlayoutexperiments.models.MainElements
 import kotlinx.android.synthetic.main.activity_main.*

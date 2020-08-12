@@ -1,7 +1,8 @@
-package com.eahm.motionlayoutexperiments
+package com.eahm.motionlayoutexperiments.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.eahm.motionlayoutexperiments.R
 
 class DragEventAndComplexPaths : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

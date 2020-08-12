@@ -1,8 +1,8 @@
-package com.eahm.motionlayoutexperiments
+package com.eahm.motionlayoutexperiments.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.constraintlayout.motion.widget.KeyAttributes
+import com.eahm.motionlayoutexperiments.R
 
 class ModifyingAPath : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
