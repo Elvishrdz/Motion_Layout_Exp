@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
 
        rvMain.apply {
            layoutManager = LinearLayoutManager(this@MainActivity, LinearLayoutManager.VERTICAL, false)
-           adapter = MainAdapter(mainMenu)
+           adapter = MainAdapter(mainMenu.reversed())
        }
 
     }
