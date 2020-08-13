@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Motion Layout Experiments</string>
     <string name="lorem_text">Lorem ipsum dolor sit amet, consectetur adipi ullamcorper purus laoreet. Nulla diam ligula, fringilla nec semper id, porta sit amet enim. Aenean orci leo, tincidunt eget nisi vel, vehicula pharetra odio. Mauris et semper nisi. Donec posuere neque risus, quis congue ex rhoncus id. Aenean a nunc rutrum, sodales augue at, vehicula mauris. Fusce sed erat iaculis, elementum nisl id, tincidunt eros. Vestibulum quis rutrum odio. Quisque aliquet facilisis erat, vel imperdiet diam tincidunt ut. Nulla volutpat sapien sit amet elementum fringilla. Fusce quis urna ut mauris efficitur malesuada. Aenean venenatis tincidunt nibh, vitae pharetra purus sodales ullamcorper. Sed laoreet sapien eu risus dignissim, sed egestas elit faucibus. Aliquam ultrices cursus mauris imperdiet ornare.</string>
+    <string name="welcome">Welcome</string>
 </resources>

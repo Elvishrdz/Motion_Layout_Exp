@@ -40,6 +40,11 @@ class MainActivity : AppCompatActivity() {
             "Motion with Code",
             "This layout uses a CoordinatorLayout to share scrolling information between the NestedScrollView and the AppBarLayout",
             MotionWithCode::class.java
+        ),
+        MainElements(
+            "Multiple Transitions | deriveConstraintsFrom",
+            "Applying in our MotionScene multiple 'stages' in the animation with more than two <Transition> tags",
+            MultipleTransitions::class.java
         )
     )
 
